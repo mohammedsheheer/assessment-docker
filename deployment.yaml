@@ -13,10 +13,10 @@ spec:
         app: html-demo 
     spec:
       containers:
-      - name: html-demo
-        image: mohammedsheheer/html-demo:latest
+     - name: html-demo
+        image: mohammedsheheer/assessment-docker:latest
         ports:
-        - containerPort: 80 
+        - containerPort: 80
 ---
 apiVersion: v1 
 kind: Service 

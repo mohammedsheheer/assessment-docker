@@ -1,32 +1,32 @@
-[cite_start]apiVersion: apps/v1 [cite: 58]
-[cite_start]kind: Deployment [cite: 59]
+apiVersion: apps/v1
+kind: Deployment 
 metadata:
-  [cite_start]name: html-demo [cite: 61]
+  name: html-demo 
 spec:
-  [cite_start]replicas: 2 [cite: 63]
+  replicas: 2 
   selector:
     matchLabels:
-      [cite_start]app: html-demo [cite: 64, 65, 66]
+      app: html-demo 
   template:
     metadata:
       labels:
-        [cite_start]app: html-demo [cite: 68, 69, 70]
+        app: html-demo 
     spec:
       containers:
-      - [cite_start]name: html-demo [cite: 73]
-        [cite_start]image: swetab84/html-demo:latest [cite: 74, 150]
+      - name: html-demo
+        image: mohammedsheheer/html-demo:latest
         ports:
-        - [cite_start]containerPort: 80 [cite: 75, 76]
+        - containerPort: 80 
 ---
-[cite_start]apiVersion: v1 [cite: 77]
-[cite_start]kind: Service [cite: 78]
+apiVersion: v1 
+kind: Service 
 metadata:
-  [cite_start]name: html-demo-service [cite: 80]
+  name: html-demo-service 
 spec:
-  [cite_start]type: NodePort [cite: 82]
+  type: NodePort
   selector:
-    [cite_start]app: html-demo [cite: 83, 84]
+    app: html-demo
   ports:
-    - [cite_start]port: 80 [cite: 85, 86]
-      [cite_start]targetPort: 80 [cite: 87]
-      [cite_start]nodePort: 30010 [cite: 88, 198]
+    - port: 80
+      targetPort: 80
+      nodePort: 30010
